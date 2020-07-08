@@ -149,6 +149,9 @@ pendientes.forEach(
 
     });
 
+console.log('');
+console.log('');
+
 //Map para recorrer un arreglo de objetos
 console.log(' Utilizando Map para recorrer un arreglo de objetos ');
 
@@ -164,7 +167,11 @@ const carrito = [
     {id: 8, producto: 'SmartPhone'},
 ];
 
+console.log('Mostrando el arreglo de objetos');
 console.log(carrito);
+
+console.log('');
+console.log('');
 
 const nombreProducto = carrito.map(
     function(carrito)
@@ -176,19 +183,152 @@ const nombreProducto = carrito.map(
 
 console.log(nombreProducto);
 
+console.log(' ');
+console.log(' ');
+
 //---------------------------------------------------------------------------
- const automovil = {
+console.log('Utilizando un forEach'); 
+const automovil = {
      modelo: 'Mustang',
      motor: 'V8',
      anio: '2015',
      marca: 'Ford'
  };
 
- for(let auto in automovil)
- {
-     console.log(`${auto}: ${automovil[auto]}`);
- }
- 
+for(let auto in automovil)
+{
+    console.log(`${auto}: ${automovil[auto]}`);
+}
+console.log(' ');
+console.log(' ');
+
+//---------- ITERADORES YA INCLUIDOS EN LENGUAJE JavaScript ---------------------
+console.log('Iteradores ya incluidos en JavaScript');
+
+const ciudades = ['Londres','New York','Madrid','Mexico'];
+
+//El objeto Set permite almacenar valores únicos de cualquier tipo, 
+//incluso valores primitivos u referencias a objetos.
+const ordenes = new Set([123,231,131,102]);
+
+//El objeto Map almacena pares clave/valor.
+const datos = new Map();
+
+datos.set('nombre','Luis Angel');
+datos.set('profesion','Desarrollador Web');
+//console.log(datos);
+
+//Iterador entries(), en el caso de entries, nos retorna llave-valor,
+//o clave-valor.
+
+//Entries para ciudades
+console.log('Entries para ciudades');
+for(let entrada of ciudades.entries())
+{
+    console.log(entrada);
+}
+console.log('');
+
+//Entries para las ordenes
+console.log('Entries para ordenes');
+for(let entrada of ordenes.entries())
+{
+    console.log(entrada);
+}
+console.log('');
+//Recordar que para la funcion set la clave es el mismo valor
+//por lo cual los valores son unicos.
+
+//Entries para el MAP
+console.log('Entries para el MAP');
+for(let entrada of datos.entries())
+{
+    console.log(entrada);
+}
+console.log('');
+
+//-------------------------------------------------------------
+//El Iterador values(), este iterador nos regresará solo datos,
+//o mejor dicho solo los valores sin las claves.
+//Values para ciudades
+console.log('Values para ciudades');
+for(let entrada of ciudades.values())
+{
+    console.log(entrada);
+}
+console.log('');
+
+//Values para las ordenes
+console.log('Values para ordenes');
+for(let entrada of ordenes.values())
+{
+    console.log(entrada);
+}
+console.log('');
+//Recordar que para la funcion set la clave es el mismo valor
+//por lo cual los valores son unicos.
+
+//Values para el MAP
+console.log('Values para el MAP');
+for(let entrada of datos.values())
+{
+    console.log(entrada);
+}
+console.log(' ');
+
+//------------------------------------------------------------------
+//Iterador Keys, este tipo de iterador nos retorna solo las claves
+//de los conjuntos de datos
+//Keys para ciudades
+console.log('Iterador Keys en JavaScript');
+console.log('Keys para ciudades');
+for(let entrada of ciudades.keys())
+{
+    console.log(entrada);
+}
+console.log('');
+
+//Keys para las ordenes
+console.log('Keys para ordenes');
+for(let entrada of ordenes.keys())
+{
+    console.log(entrada);
+}
+console.log('');
+//Recordar que para la funcion set la clave es el mismo valor
+//por lo cual los valores son unicos.
+
+//Keys para el MAP
+console.log('Keys para el MAP');
+for(let entrada of datos.keys())
+{
+    console.log(entrada);
+}
+console.log(' ');
+
+//------------------------------------------------------------------
+//Recorrer un String
+
+//En JavaScript podemos recorrer un String de la siguiente manera
+console.log('Recorriendo un String en JavaScript');
+
+const mensaje = "Aprendiendo JavaScript";
+
+for(let letra of mensaje)
+{
+    console.log(letra);
+}
+console.log();
+
+//----------------------------------------------------------------------
+const enlaces = document.getElementsByTagName('a');
+
+for(let enlace of enlaces)
+{
+    console.log(enlace.href);
+}
+
+
 
  
 
