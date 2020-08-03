@@ -97,6 +97,59 @@ enlace = document.querySelector('#principal a:nth-child(3)');
 enlace = document.querySelector('#principal a:last-child');
 
 console.log(enlace);
-
+ 
 //----------------------------------------------------------------------
+console.log('');
 //Seleccion de multiples elementos con JavaScript
+let enlaces = document.getElementsByClassName('enlace')[3];
+
+//Agregando CSS
+enlaces.style.background = '#333';
+enlaces.style.color = 'red';
+
+//UTILIZANDO querySelector y getElementByClassName
+const listaEnlaces = document.querySelector('#principal').getElementsByClassName('enlace');
+
+//elementos por las etiquetas de HTML
+const link = document.getElementsByTagName('a');
+
+link[19].style.color = 'red';
+link[19].textContent = 'Nuevo Enlace';
+
+//console.log(enla);
+
+//UTILIZANDOLO COMO ARREGLO
+const links = document.getElementsByTagName('a');
+
+let enla = Array.from(links);
+
+enla.forEach(function(e){
+    console.log(e.textContent);
+});
+
+//UTILIZANDO EL querySelectorAll OTRA FORMA DE SELCCIONAR ELEMENTOS.
+console.log('');
+console.log('');
+
+//podemos seleccionar como si fuera jquery
+const en = document.querySelectorAll('#principal .enlace');
+
+//Podemos realizar cambios al CSS mediante JavaScript, como se hizo anteriormenter
+//se trata a manera de un arereglo
+
+console.log(en);
+console.log(' ');
+
+//Haciendo un pequeño ejemplo de como se utiliza
+const x = document.querySelectorAll('#principal a:nth-child(odd)');
+
+x.forEach(function(impares){
+    impares.style.backgroundColor = 'red';
+    impares.style.color = 'white';
+});
+
+console.log(x);
+
+
+
+
