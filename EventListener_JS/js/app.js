@@ -95,3 +95,88 @@ function obtenerEvento(e)
 {
     console.log(`EVENTO: ${e.type}`);
 }
+
+
+//---------------------------------------------------------------------------------------
+//EventListeners para los input
+
+const busqueda = document.querySelector('#buscador');
+
+//EventListener = keydown
+//Este evento se ejecutara cada que presiones una tecla, en este ejemplo
+//se ocupa dentro de un input de busqueda
+//busqueda.addEventListener('keydown',obtenerEventoInput);
+
+//EventListener = keyup
+//Este evento se ejecutara cuando dejes de presionar una tecla
+//busqueda.addEventListener('keyup',obtenerEventoInput);
+
+//EventListener = keypress
+//El evento se activara cada que presionemos una tecla
+//busqueda.addEventListener('keypress',obtenerEventoInput);
+
+//EventListener = focus
+//Este evento se activará cuando des click sobre el input
+//busqueda.addEventListener('focus',obtenerEventoInput);
+
+//EventListener = blur
+// Este evento se activará una vez que el usuario de un click fue del input
+//este evento es utilizado para validar las entradas en los mismos
+//busqueda.addEventListener('blur',obtenerEventoInput);
+
+//EventListener = cut
+//Este evento se activara cuando el usuario corte un texto dentro d eun input
+//busqueda.addEventListener('cut',obtenerEventoInput);
+
+//EventListener = copy
+//Este evento se activará cuando el usuario presione CTRL + C, o copie algo con el menu
+//dentro de un input, funciona en ambos casos
+//busqueda.addEventListener('copy',obtenerEventoInput);
+
+//EventListener = paste
+//se activara cuando peguen un texto, en un elemento de entrada
+//busqueda.addEventListener('paste',obtenerEventoInput);
+
+//EventListener = input
+//Este evento es una recopilacion de todos los anteriores mencianados, se activara
+//realizando cualquiera de los anteriores mencionados
+busqueda.addEventListener('input',obtenerEventoInput);
+
+//EventListener = change
+//Este tipo de evento esta mas dirigido a los selec-option de html
+//busqueda.addEventListener('change',obtenerEventoInput);
+
+function obtenerEventoInput(e)
+{
+    //console.log(busqueda.value);
+    console.log(`EVENTO: ${e.type}`);
+}
+
+
+
+//-------------------------------------------------------------------------------------------------
+//Algo que se puede presentar con los eventos es el llamado Event Bubbling, 
+//o mejor llamado burbuja de eventos el cual ejecuta los eventos de los hijos
+//a continuacion un ejemplo, esta propagacion de eventos se soluciona
+//con la funcion stopPropagation()
+
+const card = document.querySelector('.card');
+const infoCurso = document.querySelector('.info-card');
+const agregarCarrito = document.querySelector('.agregar-carrito');
+
+card.addEventListener('click',function(e){
+    console.log('Click en Card');
+    e.stopPropagation();
+});
+
+infoCurso.addEventListener('click',function(e){
+    console.log('Click en Info Curso');
+    e.stopPropagation();
+});
+
+agregarCarrito.addEventListener('click',function(e){
+    console.log('Click en Agregar Carrito');
+    e.stopPropagation();
+});
+
+
